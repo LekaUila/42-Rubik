@@ -6,11 +6,11 @@
 #    By: lflandri <liam.flandrinck.58@gmail.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 14:52:06 by lflandri          #+#    #+#              #
-#    Updated: 2024/04/09 14:52:21 by lflandri         ###   ########.fr        #
+#    Updated: 2024/04/09 17:26:26 by lflandri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= btc
+NAME 		= Rubik
 
 MAKEFLAGS	= --no-print-directory
 
