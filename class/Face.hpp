@@ -6,7 +6,7 @@
 /*   By: lflandri <liam.flandrinck.58@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:39:02 by lflandri          #+#    #+#             */
-/*   Updated: 2024/04/09 16:06:04 by lflandri         ###   ########.fr       */
+/*   Updated: 2024/04/09 18:13:58 by lflandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,16 @@
 class Face
 {
 private:
-	const int color;
-	std::vector<std::vector<int>> caseArray;
+	int color;
+	std::vector< std::vector<int> > caseArray;
 	Face *leftFace;
 	Face *rightFace;
 	Face *topFace;
 	Face *bottomFace;
 
 public:
+
+	Face();
 	Face(int color);
 	~Face();
 
@@ -56,9 +58,11 @@ public:
 	*/
 	void							rotateRight();
 	/*Return the case off the array.*/
-	std::vector<std::vector<int>>	&getCaseArray();
+	std::vector< std::vector<int> >	&getCaseArray();
 	/*Return true if the frace is complete, false else.
 	*/
 	bool							isFaceComplete();
+	/*Set the color of the face (all case will be change)*/
+	void setColor(int color);
 };
 #endif

@@ -6,7 +6,7 @@
 /*   By: lflandri <liam.flandrinck.58@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:29:12 by lflandri          #+#    #+#             */
-/*   Updated: 2024/04/09 15:47:03 by lflandri         ###   ########.fr       */
+/*   Updated: 2024/04/09 18:16:00 by lflandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int main(int argc, char **argv)
 {
-
+	(void) argc;
+	(void) argv;
+	Rubik rubik;
 
 	return (0);
 }

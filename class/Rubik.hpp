@@ -6,21 +6,31 @@
 /*   By: lflandri <liam.flandrinck.58@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:40:19 by lflandri          #+#    #+#             */
-/*   Updated: 2024/04/09 15:43:41 by lflandri         ###   ########.fr       */
+/*   Updated: 2024/04/09 18:11:19 by lflandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FACE
-# define FACE
+#ifndef RUBIK
+# define RUBIK
 # include "Face.hpp"
 
 class Rubik
 {
 private:
-	/* data */
+	Face redFace;
+	Face orangeFace;
+	Face yellowFace;
+	Face whiteFace;
+	Face greenFace;
+	Face blueFace;
+
 public:
-	Rubik(/* args */);
+	Rubik();
 	~Rubik();
+	void	leftRotateFace(int color);
+	void	rightRotateFace(int color);
+	bool	isResolve();
+	void	resolve();
 };
 
 
