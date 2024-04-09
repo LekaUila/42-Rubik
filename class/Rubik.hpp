@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   Rubik.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lflandri <liam.flandrinck.58@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 15:29:12 by lflandri          #+#    #+#             */
-/*   Updated: 2024/04/09 15:30:19 by lflandri         ###   ########.fr       */
+/*   Created: 2024/04/09 15:40:19 by lflandri          #+#    #+#             */
+/*   Updated: 2024/04/09 15:43:41 by lflandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main(int argc, char **argv)
+#ifndef FACE
+# define FACE
+# include "Face.hpp"
+
+class Rubik
 {
+private:
+	/* data */
+public:
+	Rubik(/* args */);
+	~Rubik();
+};
 
 
-	return (0);
-}
+
+#endif
