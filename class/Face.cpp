@@ -6,7 +6,7 @@
 /*   By: lflandri <liam.flandrinck.58@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:38:52 by lflandri          #+#    #+#             */
-/*   Updated: 2024/04/09 18:19:14 by lflandri         ###   ########.fr       */
+/*   Updated: 2024/04/11 14:11:52 by lflandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,13 +84,14 @@ void	Face::rotateLeft()
 
 	for (size_t i = 0; i < 3; i++)
 	{
-		copyLeftLignFace[i] = this->leftFace->getCaseArray()[2][i];
-		copyBottomLignFace[i] = this->bottomFace->getCaseArray()[i][0];
-		copyRightLignFace[i] = this->rightFace->getCaseArray()[i][2];
-		copyTopLignFace[i] = this->topFace->getCaseArray()[0][i];
+		copyLeftLignFace.push_back(this->leftFace->getCaseArray()[2][i]);
+		copyBottomLignFace.push_back(this->bottomFace->getCaseArray()[i][0]);
+		copyRightLignFace.push_back(this->rightFace->getCaseArray()[i][2]);
+		copyTopLignFace.push_back(this->topFace->getCaseArray()[0][i]);
+		copyActualFAce.push_back(std::vector<int>());
 		for (size_t j = 0; j < 3; j++)
 		{
-			copyActualFAce[i][j] = this->caseArray[i][j];
+			copyActualFAce[i].push_back(this->caseArray[i][j]);
 		}
 	}
 	for (size_t i = 0; i < 3; i++)
@@ -122,13 +123,14 @@ void	Face::rotateRight()
 
 	for (size_t i = 0; i < 3; i++)
 	{
-		copyLeftLignFace[i] = this->leftFace->getCaseArray()[2][i];
-		copyBottomLignFace[i] = this->bottomFace->getCaseArray()[i][0];
-		copyRightLignFace[i] = this->rightFace->getCaseArray()[i][2];
-		copyTopLignFace[i] = this->topFace->getCaseArray()[0][i];
+		copyLeftLignFace.push_back(this->leftFace->getCaseArray()[2][i]);
+		copyBottomLignFace.push_back(this->bottomFace->getCaseArray()[i][0]);
+		copyRightLignFace.push_back(this->rightFace->getCaseArray()[i][2]);
+		copyTopLignFace.push_back(this->topFace->getCaseArray()[0][i]);
+		copyActualFAce.push_back(std::vector<int>());
 		for (size_t j = 0; j < 3; j++)
 		{
-			copyActualFAce[i][j] = this->caseArray[i][j];
+			copyActualFAce[i].push_back(this->caseArray[i][j]);
 		}
 	}
 	for (size_t i = 0; i < 3; i++)

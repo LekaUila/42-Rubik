@@ -6,7 +6,7 @@
 /*   By: lflandri <liam.flandrinck.58@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:40:19 by lflandri          #+#    #+#             */
-/*   Updated: 2024/04/11 13:54:55 by lflandri         ###   ########.fr       */
+/*   Updated: 2024/04/11 14:21:24 by lflandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ public:
 	void	rightRotateFace(int color);
 	bool	isResolve();
 	void	resolve();
+	void	printRubikFaces();
 };
 
 

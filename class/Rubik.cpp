@@ -6,7 +6,7 @@
 /*   By: lflandri <liam.flandrinck.58@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:40:37 by lflandri          #+#    #+#             */
-/*   Updated: 2024/04/11 13:56:46 by lflandri         ###   ########.fr       */
+/*   Updated: 2024/04/11 14:55:26 by lflandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	Rubik::shuffle(std::string command)
 	bool	clockwise = true;
 	int		color;
 	int		turn = 1;
-
+	this->printRubikFaces();
 	while (command[i])
 	{
 		clockwise = true;
@@ -97,12 +97,14 @@ void	Rubik::shuffle(std::string command)
 			if (clockwise == true)
 			{
 				std::cout << "face : " << color << " is rotating " << turn << " number of time in clockwise direction !" << std::endl;
-				//rightRotateFace(color);
+				rightRotateFace(color);
+				this->printRubikFaces();
 			}
 			else
 			{
 				std::cout << "face : " << color << " is rotating " << turn << " number of time in counter clockwise direction !" << std::endl;
-				//leftRotateFace(color);
+				leftRotateFace(color);
+				this->printRubikFaces();
 			}
 			j++;
 		}
@@ -175,5 +177,68 @@ bool	Rubik::isResolve()
 void	Rubik::resolve()
 {
 
+}
+
+void	Rubik::printRubikFaces()
+{
+	std::string	couleurCode[6] = {"\e[0;31m","\e[1;37m","\e[0;33m","\e[1;32m","\e[1;34m","\e[1;33m"};
+	std::string	reset = "\e[0;m";
+	std::vector< std::vector<int> > whiteArray = this->whiteFace.getCaseArray();
+	std::vector< std::vector<int> > redArray = this->redFace.getCaseArray();
+	std::vector< std::vector<int> > orangeArray = this->orangeFace.getCaseArray();
+	std::vector< std::vector<int> > yellowArray = this->yellowFace.getCaseArray();
+	std::vector< std::vector<int> > greenArray = this->greenFace.getCaseArray();
+	std::vector< std::vector<int> > blueArray = this->blueFace.getCaseArray();
+
+	for (size_t i = 0; i < 3; i++)
+	{
+		std::cout << "                ";
+		for (size_t j = 0; j < 3; j++)
+		{
+			std::cout << couleurCode[whiteArray[2 - i][2 - j]  - 1] << "■ " << reset;
+		}
+		std::cout << std::endl;
+		
+	}
+
+	for (size_t i = 0; i < 3; i++)
+	{
+		for (size_t j = 0; j < 3; j++)
+		{
+			std::cout << couleurCode[orangeArray[2 - j][i]  - 1] << "■ " << reset;
+		}
+		std::cout << "  ";
+		for (size_t j = 0; j < 3; j++)
+		{
+			std::cout << couleurCode[greenArray[j][2 - i]  - 1] << "■ " << reset;
+		}
+		std::cout << "  ";
+
+		for (size_t j = 0; j < 3; j++)
+		{
+			std::cout << couleurCode[redArray[i][j]  - 1] << "■ " << reset;
+		}
+		std::cout << "  ";
+		for (size_t j = 0; j < 3; j++)
+		{
+			std::cout << couleurCode[blueArray[2 - i][2 - j]  - 1] << "■ " << reset;
+		}
+		std::cout << std::endl;
+		
+	}
+
+
+
+	for (size_t i = 0; i < 3; i++)
+	{
+		std::cout << "                ";
+		for (size_t j = 0; j < 3; j++)
+		{
+			std::cout << couleurCode[yellowArray[2 - j][i] - 1] << "■ " << reset;
+		}
+		std::cout << std::endl;
+		
+	}
+	
 }
 
