@@ -18,3 +18,29 @@ int chooseColor(char c)
     std::cout << "Error in shuffle, " << c << " is not a receveble argument !" << std::endl;
     return (-1);
 }
+
+int	turnNumber(std::string command, int i)
+{
+	std::string	number;
+	int j = 0;
+	int start = i;
+	std::stringstream ss;
+
+	while (command[i] && command[i] != ' ')
+	{
+		if (command[i] < '0' && command[i] > '9')
+		{
+			std::cout << "Error in shuffle, " << command[i] << " is not a receveble argument !" << std::endl;
+    		return (-1);
+		}
+		number[j] = command[i]; 
+		i++;
+	}
+	number = command.substr(start, i);
+	ss << number;
+	ss >> j;
+	if (j == 0)
+		return (1);
+	//std::cout << "j is : " << j << std::endl;
+	return (j);
+}

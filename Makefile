@@ -6,7 +6,7 @@
 #    By: lflandri <liam.flandrinck.58@gmail.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 14:52:06 by lflandri          #+#    #+#              #
-#    Updated: 2024/04/09 18:07:42 by lflandri         ###   ########.fr        #
+#    Updated: 2024/04/11 13:54:25 by lflandri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ MAKEFLAGS	= --no-print-directory
 SRC 		=	main.cpp \
 				class/Face.cpp \
 				class/Rubik.cpp \
+				utils.cpp 
+
 
 				
 				

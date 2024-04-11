@@ -6,7 +6,7 @@
 /*   By: lflandri <liam.flandrinck.58@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:42:43 by lflandri          #+#    #+#             */
-/*   Updated: 2024/04/09 17:26:42 by lflandri         ###   ########.fr       */
+/*   Updated: 2024/04/11 13:56:39 by lflandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,14 @@
 # define GREEN 4
 # define BLUE 5
 # define YELLOW 6
+
+
+/*FUNCTION DECLARATION*/
+
+
+int	chooseColor(char c);
+int	turnNumber(std::string command, int i);
+
+
 
 #endif
