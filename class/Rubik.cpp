@@ -6,7 +6,7 @@
 /*   By: lflandri <liam.flandrinck.58@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:40:37 by lflandri          #+#    #+#             */
-/*   Updated: 2024/04/11 14:55:26 by lflandri         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:06:05 by lflandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ Rubik::Rubik(/* args */)
 	this->redFace.setTopFace(this->whiteFace);
 	this->redFace.setRightFace(this->blueFace);
 	this->whiteFace.setTopFace(this->redFace);
-	this->whiteFace.setRightFace(this->yellowFace);
-	this->blueFace.setTopFace(this->redFace);
+	this->whiteFace.setRightFace(this->greenFace);
+	this->blueFace.setTopFace(this->yellowFace);
 	this->blueFace.setRightFace(this->redFace);
 	this->greenFace.setTopFace(this->orangeFace);
 	this->greenFace.setRightFace(this->whiteFace);
