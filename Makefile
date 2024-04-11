@@ -16,7 +16,7 @@ MAKEFLAGS	= --no-print-directory
 
 SRC 		=	main.cpp \
 				class/Face.cpp \
-				class/Rubik.cpp 
+				class/Rubik.cpp \
 
 				
 				

@@ -12,6 +12,50 @@
 
 #include "Rubik.hpp"
 
+int chooseColor(char c)
+{
+    if (c == 'F')
+        return (GREEN);
+    else if (c == 'R')
+        return (RED);
+    else if (c == 'U')
+        return (WHITE);
+    else if (c == 'B')
+        return (BLUE);
+    else if (c == 'L')
+        return (ORANGE);
+    else if (c == 'D')
+        return (YELLOW);
+    std::cout << "Error in shuffle, " << c << " is not a receveble argument !" << std::endl;
+    return (-1);
+}
+
+int	turnNumber(std::string command, int i)
+{
+	std::string	number;
+	int j = 0;
+	int start = i;
+	std::stringstream ss;
+
+	while (command[i] && command[i] != ' ')
+	{
+		if (command[i] < '0' && command[i] > '9')
+		{
+			std::cout << "Error in shuffle, " << command[i] << " is not a receveble argument !" << std::endl;
+    		return (-1);
+		}
+		number[j] = command[i]; 
+		i++;
+	}
+	number = command.substr(start, i);
+	ss << number;
+	ss >> j;
+	if (j == 0)
+		return (1);
+	//std::cout << "j is : " << j << std::endl;
+	return (j);
+}
+
 
 Rubik::Rubik(/* args */)
 {
@@ -52,6 +96,62 @@ Rubik::Rubik(/* args */)
 
 Rubik::~Rubik()
 {
+}
+
+void	Rubik::shuffle(std::string command)
+{
+	int		i = 0;
+	int		j = 0;
+	bool	clockwise = true;
+	int		color;
+	int		turn = 1;
+
+	while (command[i])
+	{
+		clockwise = true;
+		turn = 1;
+		while (command[i] && command[i] == ' ')
+			i++;
+		if (!command[i])
+			break ;
+		color = chooseColor(command[i]);
+		i++;
+		//std::cout << "color is " << color << std::endl;
+		if (command[i] == '\'')
+		{
+			//std::cout << "counter clockwise !!" << std::endl;
+			clockwise = false;
+			i++;
+		}
+		if (command[i] != ' ')
+			turn = turnNumber(command, i);
+		while(command[i] && command[i] != ' ')
+		{
+			if (command[i] < '0' || command[i] > '9')
+			{
+				std::cout << "Error in shuffle, " << command[i] << " is not a receveble argument !" << std::endl;
+    			return ;
+			}
+			i++;
+		}
+		if (turn == -1 || color == -1)
+			return ;
+		j = 0;
+		while (j != turn)
+		{
+			if (clockwise == true)
+			{
+				std::cout << "face : " << color << " is rotating " << turn << " number of time in clockwise direction !" << std::endl;
+				//rightRotateFace(color);
+			}
+			else
+			{
+				std::cout << "face : " << color << " is rotating " << turn << " number of time in counter clockwise direction !" << std::endl;
+				//leftRotateFace(color);
+			}
+			j++;
+		}
+	}
 }
 
 void	Rubik::leftRotateFace(int color)

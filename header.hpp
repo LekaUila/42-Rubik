@@ -17,9 +17,11 @@
 # include <vector>
 # include <string>
 
-
-
-
-
+# define RED 1
+# define WHITE 2
+# define ORANGE 3
+# define GREEN 4
+# define BLUE 5
+# define YELLOW 6
 
 #endif

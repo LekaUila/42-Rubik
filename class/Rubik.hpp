@@ -13,6 +13,10 @@
 #ifndef RUBIK
 # define RUBIK
 # include "Face.hpp"
+# include <ostream>
+# include <iostream>
+# include <sstream>
+
 
 class Rubik
 {
@@ -27,6 +31,7 @@ private:
 public:
 	Rubik();
 	~Rubik();
+	void	shuffle(std::string command);
 	void	leftRotateFace(int color);
 	void	rightRotateFace(int color);
 	bool	isResolve();
