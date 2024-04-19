@@ -13,6 +13,7 @@ running = True
 font = pygame.font.SysFont(None, 24)
 flag = False
 can_rotate = False
+space_press = False
 ang = 0
 
 def dessine(rd,cd,apd):
@@ -49,24 +50,6 @@ def tourne(r,c,a):
     else :
         dessine(r,c,ap+pi)
         dessine(r,c,ap+(3/2)*pi) 
-    # if (a < 90) :
-    #     dessine(r,c,ap+pi)
-    #     dessine(r,c,ap+(3/2)*pi)    
-    # elif (a < 180) :
-    #     dessine(r,c,ap+(3/2)*pi)
-    #     dessine(r,c,ap)
-    # elif (a < 270) :
-    #     dessine(r,c,ap)
-    #     dessine(r,c,ap+pi/2)
-    # else :
-    #     dessine(r,c,ap+pi/2)
-    #     dessine(r,c,ap+pi)    
-
-    
-    # dessine(r,c,ap)
-    # dessine(r,c,ap+pi/2)
-    # dessine(r,c,ap+pi)
-    # dessine(r,c,ap+(3/2)*pi)
     if (can_rotate) :
         global ang
         ang=ang+1
@@ -81,8 +64,12 @@ while running:
         if event.type == pygame.QUIT:
             running = False
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_SPACE]:
+    if keys[pygame.K_SPACE] and not(space_press):
         can_rotate = not(can_rotate)
+        space_press = True
+    elif space_press and not (keys[pygame.K_SPACE]) :
+        space_press = False
+        
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("black")
 
